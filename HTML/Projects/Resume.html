@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling when using the dropdown */
+        }
+        
+        h1 {
+            color: brown;
+            background-color: bisque;
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px black;
+            width: 200px;
+        }
+
+        .heading {
+            color: brown;
+            background-color: bisque;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 15px;
+            border: 1px solid;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px black;
+            margin-bottom: 50px;
+        }
+        
+        .menu-bar {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        select {
+            color: bisque;
+            background-color: brown;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 15px;
+            text-align: center;
+            text-align-last: center;
+            cursor: pointer;
+            box-shadow: 3px 3px 10px black;
+        }
+
+        select:hover {
+            background-color: #6e2c00;
+            transform: scale(1.1);
+            transition: 0.2s;
+        }
+
+        /* From Uiverse.io by mi-series */ 
+        .button {
+            color: bisque;
+            width: 150px;
+            padding: 0;
+            border: none;
+            transform-origin: center;
+            font-family: "Gochi Hand", cursive;
+            text-decoration: none;
+            font-size: 15px;
+            cursor: pointer;
+            padding-bottom: 3px;
+            border-radius: 5px;
+            box-shadow: 0 2px 0 #494a4b;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background-color: brown;
+        }
+
+        .button span {
+            background: #f1f5f8;
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 2px solid #494a4b;
+        }
+
+        .button:active {
+            transform: translateY(5px);
+            padding-bottom: 0px;
+            outline: 0;
+        }
+
+        /* --------------------------------------------------
+            WORKING PURE CSS SCROLL TYPING ANIMATION
+        -------------------------------------------------- */
+        .heading h2 {
+            text-decoration: underline;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            width: 0;
+            border-right: 3px solid brown; /* Added cursor so overflow works smoothly */
+
+            /* Link animation to page scroll */
+            animation: typeText linear forwards;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+
+        /* Specific character counts (`ch` units) for each heading */
+        #objective { --text-len: 9ch; }
+        #education { --text-len: 9ch; }
+        #skills    { --text-len: 16ch; }
+        #projects  { --text-len: 8ch; }
+
+        @keyframes typeText {
+            from { width: 0; }
+            to   { width: var(--text-len); }
+        }
+    </style>
+</head>
+<body style="background-color: #fff2d8;">    
+    <h1>Lakshya Vijay</h1>
+    <p style="color: #6e2c00;text-decoration: underline;"><strong>Web & App Developer</strong></p>
+    
+    <div class="menu-bar"> 
+        <p style="width: 150px;color: #6e2c00;text-decoration: underline;"><strong>View Section:</strong></p>
+        
+        <select name="Sections" onchange="if(this.value) location.href=this.value;">
+            <option value="" selected>All Section</option>
+            <option value="#objective">Objective</option>
+            <option value="#education">Education</option>
+            <option value="#skills">Technical Skills</option>
+            <option value="#projects">Projects</option>
+        </select>
+        <button class="button" onclick="window.print()">Print</button>
+    </div>
+
+    <div class="heading" style="margin-top: 50px;">
+        <h2 id="objective">Objective</h2>
+        <p>
+            B.Tech Computer Science undergraduate seeking an entry-level web or app developer role,<br>
+            where I can apply my skills in <br>
+            <strong>Python, SQL, Dart and HTML</strong> to build useful, user-friendly applications and keep learning.
+        </p>
+    </div>
+    
+    <div class="heading">
+        <h2 id="education">Education</h2>
+        <p>B.Tech in Computer Science & Engineering (pursuing)</p>
+    </div>
+
+    <div class="heading">
+        <h2 id="skills">Technical Skills</h2>
+        <table border="4" cellspacing="0" cellpadding="10" align="center" style="border-color: #6e2c00;color: bisque;box-shadow: 3px 3px 10px black;margin-bottom: 30px;">
+            <thead bgcolor="brown" align="center">
+                <tr>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody style="color: #6e2c00;" align="center">
+                <tr>
+                    <td>Programming Languages</td>
+                    <td>Python, Dart</td>
+                </tr>
+                <tr>
+                    <td>Web Development</td>
+                    <td>HTML</td>
+                </tr>
+                <tr>
+                    <td>Databases</td>
+                    <td>SQL</td>
+                </tr>
+                <tr>
+                    <td>Areas</td>
+                    <td>Web development, mobile app development</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="heading">
+        <h2 id="projects">Projects</h2>
+        <h4>Smart Procurement Slot Booking App for Farmers</h4>
+        <details>
+            <summary>More...</summary>
+            <ul>
+                <li>Built an online app that lets farmers book procurement slots for selling their produce.</li>
+                <li>Designed to make the booking process simpler and more organised for farmers.</li>
+                <li>Technologies used: [Python, SQL, Dart]</li>
+            </ul>
+        </details>
+    </div>
+</body>
+</html>
